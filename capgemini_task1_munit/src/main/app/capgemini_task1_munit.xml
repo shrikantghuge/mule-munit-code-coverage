@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <flow name="capgemini_task1_munitFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="cg" allowedMethods="GET" doc:name="HTTP"/>
+        <choice doc:name="Choice">
+            <when expression="#[message.inboundProperties['http.query.params']['flowname'].equals('first')]">
+                <flow-ref name="capgemini_task1_munitSub_Flow1" doc:name="capgemini_task1_munitSub_Flow1"/>
+            </when>
+            <when expression="#[message.inboundProperties['http.query.params']['flowname'].equals('second')]">
+                <flow-ref name="capgemini_task1_munitSub_Flow2" doc:name="mule_munit_subFlow2"/>
+            </when>
+            <otherwise>
+                <set-payload value="Condition not satisfied" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </flow>
+    <sub-flow name="capgemini_task1_munitSub_Flow1">
+        <set-payload value="Executed task from flow 1" doc:name="Set Payload"/>
+    </sub-flow>
+    <sub-flow name="capgemini_task1_munitSub_Flow2">
+        <set-payload value="Executed task form flow2" doc:name="Set Payload"/>
+    </sub-flow>
+</mule>

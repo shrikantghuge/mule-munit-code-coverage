@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+    <munit:config name="munit" doc:name="MUnit configuration"/>
+    <spring:beans>
+        <spring:import resource="classpath:capgemini_task1_munit.xml"/>
+    </spring:beans>
+    <munit:test name="new-test-suite-capgemini_task1_munitFlowTest" description="Test">
+        <munit:set payload="#[]" doc:name="Set Message">
+            <munit:inbound-properties>
+                <munit:inbound-property key="http.query.params" value="#[['flowname':'first']]" encoding="UTF-8"/>
+            </munit:inbound-properties>
+        </munit:set>
+        <flow-ref name="capgemini_task1_munitFlow" doc:name="Flow-ref to capgemini_task1_munitFlow"/>
+        <munit:assert-payload-equals message="There is issue with calling first flow!" expectedValue="#['Executed task from flow 1']" doc:name="Assert Payload"/>
+    </munit:test>
+    <munit:test name="test-suite-capgemini_task1_munitFlowTest2" description="Test">
+        <munit:set payload="#[]" doc:name="Copy_of_Set Message">
+            <munit:inbound-properties>
+                <munit:inbound-property key="http.query.params" value="#[['flowname':'another']]" encoding="UTF-8"/>
+            </munit:inbound-properties>
+        </munit:set>
+        <flow-ref name="capgemini_task1_munitFlow" doc:name="Flow-ref to capgemini_task1_munitFlow"/>
+        <munit:assert-payload-equals message="It will fail as we have not stubbed proper value!" expectedValue="#['Executed task from flow 1']" doc:name="Assert Payload"/>
+    </munit:test>
+</mule>
