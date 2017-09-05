@@ -186,7 +186,7 @@
 		<repository>
             <id>shrikant</id>
             <name>MuleSoft Repository</name>
-            <url>https://trident.jfrog.io/trident/libs-release-local/</url>
+            <url>http://trident.jfrog.io/trident/libs-release-local/</url>
             <layout>default</layout>
         </repository>
         <repository>
