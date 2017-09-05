@@ -183,12 +183,11 @@
             <url>http://repo1.maven.org/maven2/</url>
             <layout>default</layout>
         </repository>
-		<repository>
-            <id>shrikant</id>
-            <name>MuleSoft Repository</name>
-            <url>http://trident.jfrog.io/trident/libs-release-local/</url>
-            <layout>default</layout>
-        </repository>
+		 <repository>
+			<id>central</id>
+			<name>trident-releases</name>
+			<url>https://trident.jfrog.io/trident/libs-release-local</url>
+		</repository>
         <repository>
             <id>mulesoft-releases</id>
             <name>MuleSoft Releases Repository</name>
