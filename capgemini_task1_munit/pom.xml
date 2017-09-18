@@ -188,12 +188,12 @@
 			<name>trident-releases</name>
 			<url>http://trident.jfrog.io/trident/libs-release-local</url>
 		</repository>
-        <repository>
+       <!--  <repository>
             <id>mulesoft-releases</id>
             <name>MuleSoft Releases Repository</name>
             <url>http://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
-        </repository>
+        </repository> -->
     </repositories>
     <pluginRepositories>
         <pluginRepository>
