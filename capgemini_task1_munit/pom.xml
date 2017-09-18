@@ -186,7 +186,7 @@
 		 <repository>
 			<id>central</id>
 			<name>trident-releases</name>
-			<url>https://trident.jfrog.io/trident/libs-release-local</url>
+			<url>http://trident.jfrog.io/trident/libs-release-local</url>
 		</repository>
         <repository>
             <id>mulesoft-releases</id>
