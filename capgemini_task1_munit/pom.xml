@@ -185,8 +185,8 @@
         </repository> 
 		 <repository>
 			<id>central</id>
-			<name>trident-releases</name>
-			<url>http://trident.jfrog.io/trident/libs-release-local</url>
+			<name>shrikant-releases</name>
+			<url>https://shrikant.jfrog.io/shrikant/libs-release-local</url>
 		</repository>
         <repository>
             <id>mulesoft-releases</id>
