@@ -194,13 +194,11 @@
             <url>http://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </repository> 
-		<repositories>
-			<repository>
-				<id>local-maven-repo</id>
-				<url>file:///${project.parent.basedir}</url>
-			</repository>
-		</repositories>
-    </repositories>
+		<repository>
+			<id>local-maven-repo</id>
+			<url>file:///${project.parent.basedir}</url>
+		</repository>
+	</repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>mulesoft-release</id>
