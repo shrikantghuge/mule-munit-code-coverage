@@ -100,7 +100,7 @@
 		</dependency> -->
 		<!-- Xml configuration -->
 		<dependency>
-			<groupId>com.mulesoft.muleesb.modules</groupId>
+			<groupId>src.main.libs</groupId>
 			<artifactId>mule-module-spring-config-ee</artifactId>
 			<version>3.8.5</version>
 			<scope>provided</scope>
@@ -194,6 +194,12 @@
             <url>http://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </repository> 
+		<repositories>
+			<repository>
+				<id>local-maven-repo</id>
+				<url>file:///${project.parent.basedir}</url>
+			</repository>
+		</repositories>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
