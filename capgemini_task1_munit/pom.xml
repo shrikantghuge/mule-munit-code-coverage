@@ -72,9 +72,12 @@
                 <configuration>
                     <coverage>
                         <runCoverage>true</runCoverage>
-                        <formats>
-                            <format>html</format>
-                        </formats>
+                        <runCoverage>true</runCoverage>
+						<formats>
+							<format>console</format>
+							<format>html</format>
+							<format>xml</format>
+						</formats>
                     </coverage>
                 </configuration>
             </plugin>
